@@ -14,6 +14,12 @@
  .get('/', function (req, res) {
     res.set(headers).send('hello world')
   })
+.get('/p', function(req, res) {
+    res.set(headers).send("tagId is set to " + req.query.tagId); })
+   // /p?tagId=5 (query parameteres)
+.get('/p/:tagId', function(req, res) {  res.set(headers).send("tagId is set to " + req.params.tagId);})
+// GET /p/5// tagId is set to 5
+// GET /p/5// tagId is set to 5
  .listen(PORT,()=>{
      console.log(`Server is listening on ${PORT}`)
  })
