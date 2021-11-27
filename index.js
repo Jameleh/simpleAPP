@@ -20,6 +20,9 @@
 .get('/p/:tagId', function(req, res) {  res.set(headers).send("tagId is set to " + req.params.tagId);})
 // GET /p/5// tagId is set to 5
 // GET /p/5// tagId is set to 5
+.get('*', function(req, res){
+    res.status(404).send('what???');
+  })
  .listen(PORT,()=>{
      console.log(`Server is listening on ${PORT}`)
  })
